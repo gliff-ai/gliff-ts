@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "es2020",
+    "sourceMap": true,
+    "target": "es6",
+    "jsx": "react-jsx",
+    "allowJs": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "experimentalDecorators": true,
+  },
+  "include": [
+    "typings/**/*",
+    "examples/**/*.ts*",
+    "src/**/*.tsx",
+    "src/**/*.ts",
+    "test/**/*.ts",
+    "typings/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*_.tsx",
+    "__tests__/*"
+  ]
+}
