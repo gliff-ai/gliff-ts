@@ -16,6 +16,16 @@ export default defineConfig({
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       external: [
+        "react",
+        "react-dom",
+        "react-router-dom",
+        "@mui/material",
+        "@mui/icons-material",
+        "@mui/styles",
+        "@mui/system",
+        "@emotion/react",
+        "@emotion/styled",
+        "@gliff-ai/style",
       ],
       output: {
         // Provide global variables to use in the UMD build
@@ -24,8 +34,8 @@ export default defineConfig({
       },
     },
   },
-//   esbuild: {
-//     jsxInject: `import React from 'react'`,
-//   },
+  esbuild: {
+    jsxInject: `import React from 'react'`,
+  },
   plugins: [ViteAliases()],
 });
