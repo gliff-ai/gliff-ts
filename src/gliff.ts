@@ -34,11 +34,7 @@ export default class Gliff {
    * @param type - the type of brush, either "paint" or "eraser" (defaults to "paint").
    * @param is3D - whether to use a 3D brush or not (defaults to false).
    */
-  setBrush(
-    radius: number = 0.5,
-    type: BrushType = "paint",
-    is3D: boolean = false
-  ) {
+  setBrush(radius = 0.5, type: BrushType = "paint", is3D = false): void {
     this.brush = { ...this.brush, radius, type, is3D };
   }
 
@@ -58,7 +54,7 @@ export default class Gliff {
    * @param product - the product the plugin is added to.
    * @return the data, if this is as expected, null, otherwise.
    */
-  public checkInputData(
+  public static checkInputData(
     data: PluginInput,
     product: "ANNOTATE" | "CURATE"
   ): PluginInput | null {
@@ -82,7 +78,7 @@ export default class Gliff {
    * @param spaceTimeInfo - the z- (slice number) and t- (time point) coordinates (defaults to first slice and time point).
    * @return the new bouding-box object.
    */
-  public createBoundingBox(
+  public static createBoundingBox(
     topLeft: XYPoint,
     bottomRight: XYPoint,
     spaceTimeInfo: SpaceTimeInfo = { z: 0, t: 0 }
@@ -104,7 +100,7 @@ export default class Gliff {
    * @param isClosed - whether the spline is closed or open (defaults to false).
    * @return the new spline object.
    */
-  public createSpline(
+  public static createSpline(
     coordinates: XYPoint[],
     spaceTimeInfo: SpaceTimeInfo = { z: 0, t: 0 },
     isClosed = false
@@ -126,7 +122,7 @@ export default class Gliff {
   public createBrushStroke(
     coordinates: XYPoint[],
     spaceTimeInfo: SpaceTimeInfo = { z: 0, t: 0 }
-  ) {
+  ): BrushStroke {
     return {
       coordinates,
       spaceTimeInfo,
@@ -150,7 +146,7 @@ export default class Gliff {
    * @param parameters - an object containing any parameter relevant to the annotation (defaults to an empty object)
    * @return the new annotation object.
    */
-  public createAnnotation(
+  public static createAnnotation(
     toolbox: string,
     labels: string[] = [],
     spline: Spline = {
@@ -177,7 +173,7 @@ export default class Gliff {
    * @param annotation - an annotation object.
    * @return wether the annotation passed as input is empty or not.
    */
-  public isEmptyAnnotation(annotation: Annotation): boolean {
+  public static isEmptyAnnotation(annotation: Annotation): boolean {
     return (
       annotation.spline.coordinates.length === 0 &&
       annotation.brushStrokes.length === 0 &&
@@ -193,7 +189,7 @@ export default class Gliff {
    * @param imageLabels - a list of image-wise labels.
    * @return the new metadata object.
    */
-  public createImageMetadata(
+  public static createImageMetadata(
     id: string,
     customImageMetadata?: CustomMetadata,
     imageLabels?: string[]
