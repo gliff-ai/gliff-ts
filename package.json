@@ -29,8 +29,8 @@
   },
   "homepage": "https://github.com/gliff-ai/gliff-ts#readme",
   "devDependencies": {
-    "@gliff-ai/annotate": "^3.1.0",
     "@gliff-ai/upload": "1.2.5",
+    "@gliff-ai/annotate": "^4.0.1",
     "@mui/types": "^7.1.3",
     "@percy/cli": "^1.0.0-beta.70",
     "@types/jest": "^26.0.21",
@@ -54,10 +54,10 @@
     "vite-aliases": "^0.8.6"
   },
   "peerDependencies": {
-    "@gliff-ai/annotate": "^3.1.0",
+    "@gliff-ai/annotate": "^4.0.1",
     "@gliff-ai/upload": "^1.2.5"
   },
-  "dependencies": { 
+  "dependencies": {
     "csstype": "<=3.0.10"
   }
 }
