@@ -1,3 +1,3 @@
-import gliff from './gliff'
+import gliff from "./gliff";
 
-export default gliff
+export default gliff;
