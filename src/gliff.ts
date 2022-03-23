@@ -9,7 +9,7 @@ import { CustomMetadata, PluginInput, Metadata } from "./interfaces";
 
 type SpaceTimeInfo = BrushStroke["spaceTimeInfo"];
 type Brush = BrushStroke["brush"];
-type BrushType = "paint" | "eraser";
+type BrushType = "paint" | "erase";
 
 /**
  * Gliff SDK
